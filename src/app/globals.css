@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+}
+
+body {
+}
+html {
+  scroll-behavior: smooth;
+}
+.spacer {
+  aspect-ratio: 960/300;
+  width: 100%;
+  background-repeate: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.layer1 {
+  background-image: url("../../public/layered-waves-haikei.svg");
+}
+.layer2 {
+  background-image: url("../../public/wave-haikei(1).svg");
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 91px;
+  transform: rotateY(180deg);
+}
+
+.wave .shape-fill {
+  fill: #ffffff;
+}
+.box::before {
+  content: "";
+  width: 3px;
+  height: calc(100% - 60px);
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  border-radius: 50%;
+  left: -14px;
+}
+
+input[type="text"],
+input[type="email"] {
+  @apply block w-full  mb-2 rounded-md outline-none;
+  @apply border p-2;
+}
+textarea {
+  @apply block w-full  mb-2 rounded-xl !outline-none h-20;
+  @apply border p-2;
+}
+label {
+  @apply text-sm leading-tight;
+}
+label + input + textarea {
+  margin-top: 2px;
+}
